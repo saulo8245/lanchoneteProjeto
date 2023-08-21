@@ -8,6 +8,7 @@ import lombok.Data;
 
 @Data
 @Entity
+//Classe cliente
 public class Cliente extends Pessoa{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
