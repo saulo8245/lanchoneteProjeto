@@ -50,4 +50,13 @@ public class CidadeController {
             super(mensagem);
         }
     }
+
+    @ResponseStatus(value = HttpStatus.CONFLICT, reason = "Entidade em uso")
+    public static class EntidadeEmUsoException extends RuntimeException {
+        private static final long serialVersionUID = 1L;
+
+        public EntidadeEmUsoException(String mensagem) {
+            super(mensagem);
+        }
+    }
 }

@@ -4,39 +4,38 @@ import br.com.appdahora.lanchonete.Model.Cliente;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import jakarta.transaction.Transactional;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-@Component
+@Repository
 public class ClienteRepositoryImpl implements ClienteRepository{
     @PersistenceContext
     private EntityManager manager;
 
     @Override
-    public List<Cliente> listar() {
+    public List<Cliente> findAll() {
         return manager.createQuery("from Cliente",
                 Cliente.class).getResultList();
     }
 
     @Override
-    public Cliente buscar(Long id) {
+    public Cliente findById(Long id) {
 
         return manager.find(Cliente.class, id);
     }
 
     @Override
     @Transactional
-    public Cliente salvar(Cliente cliente) {
+    public Cliente save(Cliente cliente) {
         System.out.println("cliente: "+cliente.getId());
         return manager.merge(cliente);
     }
 
     @Override
     @Transactional
-    public void remover(Cliente cliente) {
-        System.out.println("cliente: "+cliente.getId());
-        cliente = buscar(cliente.getId());
+    public void deleteById(Long id) {
+        Cliente cliente = findById(id);
         manager.remove(cliente);
 
     }
