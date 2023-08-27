@@ -21,6 +21,7 @@ public class ClienteRepositoryImpl implements ClienteRepository{
 
     @Override
     public Cliente buscar(Long id) {
+
         return manager.find(Cliente.class, id);
     }
 
