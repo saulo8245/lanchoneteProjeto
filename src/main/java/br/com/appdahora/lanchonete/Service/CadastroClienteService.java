@@ -1,7 +1,6 @@
 package br.com.appdahora.lanchonete.Service;
 
 import br.com.appdahora.lanchonete.Controller.ClienteController;
-import br.com.appdahora.lanchonete.Controller.EstadoController;
 import br.com.appdahora.lanchonete.Model.Cliente;
 import br.com.appdahora.lanchonete.Repository.ClienteRepository;
 import org.springframework.beans.factory.annotation.Autowired;

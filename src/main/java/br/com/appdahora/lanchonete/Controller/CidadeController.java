@@ -1,7 +1,7 @@
 package br.com.appdahora.lanchonete.Controller;
 
 import br.com.appdahora.lanchonete.Model.Cidade;
-import br.com.appdahora.lanchonete.Model.Estado;
+
 import br.com.appdahora.lanchonete.Repository.CidadeRepository;
 import br.com.appdahora.lanchonete.Service.CadastroCidadeService;
 import org.springframework.beans.BeanUtils;

@@ -3,7 +3,7 @@ package br.com.appdahora.lanchonete.Controller;
 import br.com.appdahora.lanchonete.Model.Cozinha;
 import br.com.appdahora.lanchonete.Repository.CozinhaRepository;
 import br.com.appdahora.lanchonete.Service.CadastroCozinhaService;
-import lombok.experimental.PackagePrivate;
+
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

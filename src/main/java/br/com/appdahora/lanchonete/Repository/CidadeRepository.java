@@ -1,7 +1,7 @@
 package br.com.appdahora.lanchonete.Repository;
 
 import br.com.appdahora.lanchonete.Model.Cidade;
-import br.com.appdahora.lanchonete.Model.Estado;
+
 import org.springframework.stereotype.Repository;
 
 import java.util.List;

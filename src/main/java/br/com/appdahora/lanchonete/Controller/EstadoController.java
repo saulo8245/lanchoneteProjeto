@@ -1,6 +1,6 @@
 package br.com.appdahora.lanchonete.Controller;
 
-import br.com.appdahora.lanchonete.Model.Cliente;
+
 import br.com.appdahora.lanchonete.Model.Estado;
 import br.com.appdahora.lanchonete.Repository.EstadoRepository;
 import br.com.appdahora.lanchonete.Service.CadastroEstadoService;
