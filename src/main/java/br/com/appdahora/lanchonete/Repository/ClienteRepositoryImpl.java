@@ -4,6 +4,7 @@ import br.com.appdahora.lanchonete.Model.Cliente;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import jakarta.transaction.Transactional;
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -36,6 +37,9 @@ public class ClienteRepositoryImpl implements ClienteRepository{
     @Transactional
     public void deleteById(Long id) {
         Cliente cliente = findById(id);
+        if (cliente == null){
+            throw new EmptyResultDataAccessException(1);
+        }
         manager.remove(cliente);
 
     }

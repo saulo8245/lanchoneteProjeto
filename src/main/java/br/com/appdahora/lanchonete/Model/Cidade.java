@@ -1,6 +1,8 @@
 package br.com.appdahora.lanchonete.Model;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
@@ -13,7 +15,8 @@ public class Cidade {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long Id;
     @EqualsAndHashCode.Include
-    @Column(length = 50, nullable = false)
+    @NotNull
+    @Size(min = 2)
     private String nome;
 
     @ManyToOne
