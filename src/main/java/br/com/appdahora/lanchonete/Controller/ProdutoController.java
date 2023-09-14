@@ -1,5 +1,6 @@
 package br.com.appdahora.lanchonete.Controller;
 
+import br.com.appdahora.lanchonete.Exception.Produto.ProdutoNaoEncontradoException;
 import br.com.appdahora.lanchonete.Model.Produto;
 import br.com.appdahora.lanchonete.Repository.ProdutoRepository;
 import br.com.appdahora.lanchonete.Service.CadastroProdutoService;
@@ -25,11 +26,11 @@ public class ProdutoController {
         return produtoRepository.findAll();
     }
     @GetMapping("/{produtoId}")
-    public Optional<Produto> buscarPorId(@PathVariable Long produtoId){
-        //Incompleta
-        return Optional.ofNullable(produtoRepository.findById(produtoId).orElseThrow(()
-                -> new ProdutoNaoEncontradoException("Produto nao Encontrado")));
-
+    public Produto buscarPorId(@PathVariable Long produtoId){
+        return produtoRepository.findById(produtoId)
+                .orElseThrow(()
+                        -> new ProdutoNaoEncontradoException
+                        ("Produto não encontrado"));
     }
 
     @PostMapping
@@ -55,11 +56,5 @@ public class ProdutoController {
         return ResponseEntity.notFound().build();
     }
 
-    @ResponseStatus(value = HttpStatus.NOT_FOUND,reason = "Entidade nao encontrada")
-    public static class ProdutoNaoEncontradoException extends RuntimeException{
-        private static final long serialVersionUID = 1L;
-        public ProdutoNaoEncontradoException(String mensagem){
-            super(mensagem);
-        }
-    }
+
 }

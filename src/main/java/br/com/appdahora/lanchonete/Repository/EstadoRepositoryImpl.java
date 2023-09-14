@@ -4,6 +4,7 @@ import br.com.appdahora.lanchonete.Model.Estado;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import jakarta.transaction.Transactional;
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -34,8 +35,9 @@ public class EstadoRepositoryImpl implements EstadoRepository{
     @Transactional
     public void deleteById(Long id) {
         Estado estado = findById(id);
+        if (estado == null){
+            throw new EmptyResultDataAccessException(1);
+        }
         manager.remove(estado);
-
-
     }
 }

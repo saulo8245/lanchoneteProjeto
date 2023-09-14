@@ -9,3 +9,4 @@ insert into cidade (nome,estado_id) values ('Sao Paulo',2);
 insert into cidade (nome,estado_id) values ('Cristalina',3);
 insert into produto(nome,descricao,preco) values ('Macarrao','fino',12.50);
 insert into cozinha(nome) values ('brasileira');
+insert into restaurante(nome,cozinha_id,test) values ('Bela azul',1,'teste1');
